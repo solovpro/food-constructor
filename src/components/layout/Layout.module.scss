@@ -1,0 +1,13 @@
+.layout {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background-image: url('../../assets//image/background.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: 100% 100%;
+}

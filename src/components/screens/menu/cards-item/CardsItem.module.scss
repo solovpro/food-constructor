@@ -1,0 +1,102 @@
+@import 'src/assets/styles/_variables.scss';
+
+.card {
+	width: 30%;
+	height: 170px;
+	border-radius: 16px;
+	margin: 5px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+
+	@media (prefers-color-scheme: dark) {
+		border: 1px solid $color5-25;
+	}
+	@media (prefers-color-scheme: light) {
+		border: 1px solid $color1-25;
+	}
+
+	&.add {
+		flex-direction: column;
+
+		@media (prefers-color-scheme: dark) {
+			border: 1px dashed $color5-25;
+		}
+		@media (prefers-color-scheme: light) {
+			border: 1px dashed $color1-25;
+		}
+
+		button {
+			background: none;
+			border: none;
+			border-radius: 50%;
+			overflow: hidden;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+
+	img {
+		width: 38.75%;
+		height: 150px;
+		margin: auto auto auto 10px;
+		border: 2px solid rgba(253, 144, 88, 0.5);
+		border-radius: 8px;
+		object-fit: cover;
+	}
+
+	.card__info {
+		flex-grow: 1;
+		height: calc(100% - 20px);
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: flex-start;
+		h5 {
+			margin: 0;
+		}
+		h4 {
+			text-align: left;
+			margin: 0;
+			padding: 0;
+		}
+		h6 {
+			margin: 0;
+		}
+	}
+
+	.button__group {
+		display: flex;
+		flex-direction: row;
+
+		.button {
+			border-radius: 4px;
+			margin-right: 10px;
+			padding: 0 12.5px;
+
+			&.remove {
+				background: $color2;
+				cursor: pointer;
+				padding: 2px 7px;
+				transition: 300ms;
+				display: flex;
+
+				&:hover,
+				&.active {
+					background: $color2;
+				}
+
+				svg {
+					margin: auto 0;
+				}
+			}
+		}
+	}
+}

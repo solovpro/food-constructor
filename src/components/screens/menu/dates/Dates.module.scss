@@ -1,0 +1,48 @@
+@import 'src/assets/styles/_variables.scss';
+
+.dates {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 20px;
+	height: 32px;
+
+	> button {
+		border: none;
+		font-weight: 700;
+		margin: 7px 30px;
+		padding: 0;
+		cursor: pointer;
+		transition: 300ms;
+
+		&:hover,
+		&.active {
+			background: $color2 !important;
+			border-radius: 122px;
+			margin: 0;
+			padding: 7px 30px;
+			@media (prefers-color-scheme: dark) {
+				color: $color1;
+			}
+			@media (prefers-color-scheme: light) {
+				color: $color5;
+			}
+		}
+
+		@media (prefers-color-scheme: dark) {
+			color: $color5;
+			&.active {
+				border-bottom: 2px solid $color5;
+			}
+		}
+		@media (prefers-color-scheme: light) {
+			color: $color1;
+			&.active {
+				border-bottom: 2px solid $color1;
+			}
+		}
+	}
+}
