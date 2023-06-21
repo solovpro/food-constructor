@@ -1,12 +1,12 @@
 /* eslint-disable import/extensions */
 import cn from 'clsx'
 import { FC } from 'react'
-import { useDispatch } from 'react-redux'
 
 import { ReactComponent as PlusIcon } from 'src/assets/icons/plus.svg'
 import { ReactComponent as TrashIcon } from 'src/assets/icons/trash.svg'
 
 import { removeProduct } from 'src/store/product/slice'
+import { useAppDispatch } from 'src/store/store'
 
 import { ICardsItemProps } from './CardsItem.interface'
 import styles from './CardsItem.module.scss'
@@ -20,7 +20,7 @@ const CardsItem: FC<ICardsItemProps> = ({
 	product,
 	date
 }) => {
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 
 	const onRemoveButtonClick = () => {
 		if (product) dispatch(removeProduct({ item: product, date }))

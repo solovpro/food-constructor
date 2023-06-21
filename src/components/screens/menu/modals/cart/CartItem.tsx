@@ -1,13 +1,13 @@
 import { FC } from 'react'
-import { useDispatch } from 'react-redux'
 
 import { decreaseCount, increaseCount } from 'src/store/product/slice'
+import { useAppDispatch } from 'src/store/store'
 
 import styles from './Cart.module.scss'
 import { ICartItemProps } from './cart.interface'
 
 const CartItem: FC<ICartItemProps> = ({ date, products }) => {
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 
 	const onClickPlusButton = (id: string) =>
 		dispatch(increaseCount({ id, date }))

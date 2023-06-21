@@ -3,10 +3,10 @@
 /* eslint-disable import/extensions */
 import cn from 'clsx'
 import { FC } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 
 import { productCurrentDateSelector } from 'src/store/product/selectors'
 import { addProduct, replaceProduct } from 'src/store/product/slice'
+import { useAppDispatch, useAppSelector } from 'src/store/store'
 
 import styles from './AddProduct.module.scss'
 import { IProductItemProps } from './add-product.interface'
@@ -17,7 +17,7 @@ const CarouselItem: FC<IProductItemProps> = ({
 	modalType,
 	setIsModalOpen
 }) => {
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 
 	const onClickAddButton = () => {
 		if (modalType === 'add') {
@@ -26,7 +26,9 @@ const CarouselItem: FC<IProductItemProps> = ({
 		setIsModalOpen(false)
 	}
 
-	const productToReplace = useSelector(productCurrentDateSelector(date))?.find(
+	const productToReplace = useAppSelector(
+		productCurrentDateSelector(date)
+	)?.find(
 		item =>
 			item.type === product.type &&
 			item.periodOfEating === product.periodOfEating

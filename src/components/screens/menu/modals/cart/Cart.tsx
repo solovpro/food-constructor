@@ -1,10 +1,10 @@
 import cn from 'clsx'
 import { FC, useState } from 'react'
-import { useSelector } from 'react-redux'
 
 import { ReactComponent as CloseIcon } from 'src/assets/icons/x-mark.svg'
 
 import { productSelector } from 'src/store/product/selectors'
+import { useAppSelector } from 'src/store/store'
 
 import styles from './Cart.module.scss'
 import CartItem from './CartItem'
@@ -20,7 +20,7 @@ const Cart: FC<ICartProps> = ({ setIsCartModalOpen }) => {
 	const [activeDiscountButton, setActiveDiscountButton] = useState(0)
 	const discount = discountButtonsData[activeDiscountButton].discount || 0
 
-	const orders = useSelector(productSelector)
+	const orders = useAppSelector(productSelector)
 
 	const products = orders.map(order => order.items).flat()
 

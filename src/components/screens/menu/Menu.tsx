@@ -1,11 +1,11 @@
 /* eslint-disable react/no-array-index-key */
 import cn from 'clsx'
 import { FC, useState } from 'react'
-import { useSelector } from 'react-redux'
 
 import { ReactComponent as SettingIcon } from 'src/assets/icons/setting.svg'
 
 import { productCurrentDateSelector } from 'src/store/product/selectors'
+import { useAppSelector } from 'src/store/store'
 
 import filterProducts from 'src/utils/filterProducts'
 import getDatesOfWeek from 'src/utils/getDatesOfWeek'
@@ -32,7 +32,7 @@ const Menu: FC = () => {
 
 	const [modalType, setModalType] = useState<'add' | 'replace'>('add')
 
-	const addedProductsCurrentDate = useSelector(
+	const addedProductsCurrentDate = useAppSelector(
 		productCurrentDateSelector(activeDate)
 	)
 
