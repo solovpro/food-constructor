@@ -2,12 +2,12 @@ import { INavbarItem } from './navbar.interface'
 
 const navbarData: INavbarItem[] = [
 	{
-		name: 'Меню',
+		name: 'Главная',
 		link: '/'
 	},
 	{
-		name: 'Подбор',
-		link: '/selection'
+		name: 'Меню',
+		link: '/menu'
 	},
 	{
 		name: 'О нас',
